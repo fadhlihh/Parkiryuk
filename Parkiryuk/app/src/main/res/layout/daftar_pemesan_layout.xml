@@ -63,19 +63,7 @@
                 android:drawableStart="@drawable/phone_drawable"
                 android:background="@drawable/primary_et_bg"/>
         </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:hintEnabled="false">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:hint="Plat Nomor"
-                android:drawableStart="@drawable/plat_drawable"
-                android:background="@drawable/primary_et_bg"/>
-        </android.support.design.widget.TextInputLayout>
+
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,6 +120,7 @@ term of service dan EULA"
             android:textSize="18dp"
             android:textAlignment="center"/>
         <Button
+            android:id="@+id/btn_masuk"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

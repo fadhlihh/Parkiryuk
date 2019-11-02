@@ -36,6 +36,7 @@
             android:textStyle="bold"
             android:textAlignment="center"/>
         <RadioGroup
+            android:id="@+id/rg_mode_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -46,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:text="Pemesan"
                 android:layout_marginRight="10dp"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:checked="true"/>
             <RadioButton
                 android:id="@+id/rb_pemilik"
                 android:layout_width="wrap_content"
@@ -86,7 +88,7 @@
                 />
         </android.support.design.widget.TextInputLayout>
         <Button
-            android:id="@+id/btn_daftar_masuk"
+            android:id="@+id/btn_masuk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
