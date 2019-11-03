@@ -99,7 +99,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="false"
+                app:passwordToggleContentDescription="show"
+                app:passwordToggleDrawable="@drawable/toggle_password"
+                app:passwordToggleEnabled="true">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

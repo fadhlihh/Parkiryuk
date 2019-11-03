@@ -48,13 +48,15 @@
                 android:text="Pemesan"
                 android:layout_marginRight="10dp"
                 android:textSize="18dp"
-                android:checked="true"/>
+                android:checked="true"
+                android:button="@drawable/toggle_user"/>
             <RadioButton
                 android:id="@+id/rb_pemilik"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Pemilik Parkir"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:button="@drawable/toggle_user"/>
         </RadioGroup>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -75,7 +77,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            app:hintEnabled="false">
+            app:hintEnabled="false"
+            app:passwordToggleContentDescription="show"
+            app:passwordToggleDrawable="@drawable/toggle_password"
+            app:passwordToggleEnabled="true">
             <EditText
                 android:id="@+id/et_password"
                 android:paddingLeft="10dp"

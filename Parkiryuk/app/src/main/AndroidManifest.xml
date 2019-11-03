@@ -16,5 +16,6 @@
         </activity>
         <activity android:name=".DaftarPemesanActivity"/>
         <activity android:name=".DaftarPemilikActivity"/>
+        <activity android:name=".ListTempatParkirAcrivity"/>
     </application>
 </manifest>
