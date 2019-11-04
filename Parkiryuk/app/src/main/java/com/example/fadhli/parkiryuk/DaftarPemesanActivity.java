@@ -58,7 +58,11 @@ public class DaftarPemesanActivity extends AppCompatActivity{
                                 FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nama_pemesan").setValue(nama_lengkap_user.getText().toString());
                                 FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("asal_kota").setValue(kota_user.getText().toString());
                                 FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nohp_pemesan").setValue(hp_user.getText().toString());
-
+                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("status_akun").setValue("pemesan");
+                                Intent masuk = new Intent(DaftarPemesanActivity.this,MasukActivity.class);
+                                masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(masuk);
+                                finish();
                                 Toast.makeText(DaftarPemesanActivity.this, "Sign up Successful", Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(DaftarPemesanActivity.this, "Sign up Failed", Toast.LENGTH_LONG).show();
@@ -69,10 +73,6 @@ public class DaftarPemesanActivity extends AppCompatActivity{
                 else{
                     Toast.makeText(DaftarPemesanActivity.this, "Konfirmasi password salah. Silakan ubah agar password dan konfirmasi password sama", Toast.LENGTH_LONG).show();
                 }
-                Intent masuk = new Intent(DaftarPemesanActivity.this,MasukActivity.class);
-                masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(masuk);
-                finish();
             }
         });
     }

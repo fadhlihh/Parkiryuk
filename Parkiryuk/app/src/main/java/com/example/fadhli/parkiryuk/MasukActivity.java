@@ -3,7 +3,9 @@ package com.example.fadhli.parkiryuk;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +18,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class MasukActivity extends AppCompatActivity{
     private RadioGroup rg_user_mode;
@@ -24,6 +32,7 @@ public class MasukActivity extends AppCompatActivity{
     private RadioButton rb;
     private Button btn_masuk,btn_daftar_pemilik,btn_daftar_pemesan;
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.masuk_layout);
@@ -45,18 +54,33 @@ public class MasukActivity extends AppCompatActivity{
                 int selectedID = rg_user_mode.getCheckedRadioButtonId();
                 rb = (RadioButton)findViewById(selectedID);
                 if (rb.getText().equals("Pemesan")){
-                    //mAuth = FirebaseAuth.getInstance()
                     mAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
+                                FirebaseUser currentUser = mAuth.getCurrentUser();
+                                FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        String status = dataSnapshot.child("status_akun").getValue().toString().trim();
+                                        if(status.equals("pemesan")){
+                                            Toast.makeText(MasukActivity.this, "Sign in Successful", Toast.LENGTH_LONG).show();
+                                            Intent masuk = new Intent(MasukActivity.this,ListTempatParkirAcrivity.class);
+                                            masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(masuk);
+                                            finish();
+                                        }
+                                        else{
+                                            Log.i("Outputnya",status);
+                                            Toast.makeText(MasukActivity.this, "Email atau password salah", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
 
-                                Toast.makeText(MasukActivity.this, "Sign in Successful", Toast.LENGTH_LONG).show();
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                Intent masuk = new Intent(MasukActivity.this,ListTempatParkirAcrivity.class);
-                                masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(masuk);
-                                finish();
+                                    }
+                                });
                             }
                             else{
                                 Toast.makeText(MasukActivity.this, "Email atau password salah", Toast.LENGTH_LONG).show();
@@ -70,12 +94,29 @@ public class MasukActivity extends AppCompatActivity{
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(MasukActivity.this, "Sign in Successful", Toast.LENGTH_LONG).show();
+                                FirebaseUser currentUser = mAuth.getCurrentUser();
+                                FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        String status = dataSnapshot.child("status_akun").getValue().toString().trim();
+                                        if(status.equals("pemilik")){
+                                            Toast.makeText(MasukActivity.this, "Sign in Successful", Toast.LENGTH_LONG).show();
+                                            Intent masuk = new Intent(MasukActivity.this,ListTempatParkirAcrivity.class);
+                                            masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(masuk);
+                                            finish();
+                                        }
+                                        else{
+                                            Log.i("Outputnya",status);
+                                            Toast.makeText(MasukActivity.this, "Email atau password salah", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
 
-                                Intent masuk = new Intent(MasukActivity.this,ListTempatParkirAcrivity.class);
-                                masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(masuk);
-                                finish();
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
                             }
                             else{
                                 Toast.makeText(MasukActivity.this, "Email atau password salah", Toast.LENGTH_LONG).show();

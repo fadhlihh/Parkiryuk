@@ -13,7 +13,6 @@ public class ListTempatParkirAcrivity extends AppCompatActivity {
     private TempatParkirAdapter adapter;
     private ArrayList<TempatParkir> tempatParkirArrayList;
 
-userRef.child("message1").setValue("Hello World");
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

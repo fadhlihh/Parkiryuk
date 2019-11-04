@@ -55,12 +55,16 @@ public class DaftarPemilikActivity extends AppCompatActivity{
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                FirebaseDatabase.getInstance().getReference().child("pemilik").child(task.getResult().getUser().getUid()).child("nama_tempat").setValue(nama_tempat_pemilik.getText().toString());
-                                FirebaseDatabase.getInstance().getReference().child("pemilik").child(task.getResult().getUser().getUid()).child("alamat").setValue(alamat_pemilik.getText().toString());
-                                FirebaseDatabase.getInstance().getReference().child("pemilik").child(task.getResult().getUser().getUid()).child("nohp_pemilik").setValue(hp_pemilik.getText().toString());
-                                FirebaseDatabase.getInstance().getReference().child("pemilik").child(task.getResult().getUser().getUid()).child("jml_slot").setValue(slot_pemilik.getText().toString());
-                                FirebaseDatabase.getInstance().getReference().child("pemilik").child(task.getResult().getUser().getUid()).child("harga_per_jam").setValue(harga_pemilik.getText().toString());
-
+                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nama_tempat").setValue(nama_tempat_pemilik.getText().toString());
+                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("alamat").setValue(alamat_pemilik.getText().toString());
+                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nohp_pemilik").setValue(hp_pemilik.getText().toString());
+                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("jml_slot").setValue(slot_pemilik.getText().toString());
+                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("harga_per_jam").setValue(harga_pemilik.getText().toString());
+                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("status_akun").setValue("pemilik");
+                                Intent masuk = new Intent(DaftarPemilikActivity.this,MasukActivity.class);
+                                masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(masuk);
+                                finish();
                                 Toast.makeText(DaftarPemilikActivity.this, "Sign up Successful", Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(DaftarPemilikActivity.this, "Sign up Failed", Toast.LENGTH_LONG).show();
@@ -71,10 +75,6 @@ public class DaftarPemilikActivity extends AppCompatActivity{
                 else{
                     Toast.makeText(DaftarPemilikActivity.this, "Konfirmasi password salah. Silakan ubah agar password dan konfirmasi password sama", Toast.LENGTH_LONG).show();
                 }
-                //Intent masuk = new Intent(DaftarPemilikActivity.this,MasukActivity.class);
-                //masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                //startActivity(masuk);
-                //finish();
             }
         });
     }
