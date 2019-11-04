@@ -18,82 +18,94 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:hintEnabled="false">
+
                 <EditText
+                    android:id="@+id/nama_tempat_pemilik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:hint="Nama tempat parkir"
+                    android:background="@drawable/primary_et_bg"
                     android:drawableStart="@drawable/parkir_drawable"
-                    android:background="@drawable/primary_et_bg"/>
+                    android:hint="Nama tempat parkir"
+                    android:paddingLeft="10dp" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:hintEnabled="false">
+
                 <EditText
+                    android:id="@+id/email_pemilik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:hint="Email"
+                    android:background="@drawable/primary_et_bg"
                     android:drawableStart="@drawable/email_drawable"
-                    android:background="@drawable/primary_et_bg"/>
+                    android:hint="Email"
+                    android:paddingLeft="10dp" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:hintEnabled="false">
+
                 <EditText
+                    android:id="@+id/alamat_pemilik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
+                    android:background="@drawable/primary_et_bg"
+                    android:drawableStart="@drawable/alamat_drawable"
                     android:hint="Alamat"
                     android:inputType="text|textMultiLine"
-                    android:drawableStart="@drawable/alamat_drawable"
-                    android:background="@drawable/primary_et_bg"/>
+                    android:paddingLeft="10dp" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:hintEnabled="false">
+
                 <EditText
+                    android:id="@+id/hp_pemilik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
+                    android:background="@drawable/primary_et_bg"
+                    android:drawableStart="@drawable/phone_drawable"
                     android:hint="Nomor HP"
                     android:inputType="numberSigned"
-                    android:drawableStart="@drawable/phone_drawable"
-                    android:background="@drawable/primary_et_bg"/>
+                    android:paddingLeft="10dp" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:hintEnabled="false"
                 android:layout_marginTop="10dp">
+
                 <EditText
+                    android:id="@+id/slot_pemilik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
+                    android:background="@drawable/primary_et_bg"
+                    android:drawableStart="@drawable/slot_drawable"
                     android:hint="Jumlah slot parkir"
                     android:inputType="numberSigned"
-                    android:drawableStart="@drawable/slot_drawable"
-                    android:background="@drawable/primary_et_bg"/>
+                    android:paddingLeft="10dp" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:hintEnabled="false"
                 android:layout_marginTop="10dp">
+
                 <EditText
+                    android:id="@+id/harga_pemilik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
+                    android:background="@drawable/primary_et_bg"
+                    android:drawableStart="@drawable/money_drawable"
                     android:hint="Harga per jam"
                     android:inputType="numberSigned"
-                    android:drawableStart="@drawable/money_drawable"
-                    android:background="@drawable/primary_et_bg"/>
+                    android:paddingLeft="10dp" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -103,47 +115,55 @@
                 app:passwordToggleContentDescription="show"
                 app:passwordToggleDrawable="@drawable/toggle_password"
                 app:passwordToggleEnabled="true">
+
                 <EditText
+                    android:id="@+id/password1_pemilik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
+                    android:background="@drawable/primary_et_bg"
+                    android:drawableStart="@drawable/password_drawable"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:drawableStart="@drawable/password_drawable"
-                    android:background="@drawable/primary_et_bg"/>
+                    android:paddingLeft="10dp" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:hintEnabled="false">
+
                 <EditText
+                    android:id="@+id/password2_pemilik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
+                    android:background="@drawable/primary_et_bg"
+                    android:drawableStart="@drawable/password_drawable"
                     android:hint="Konfirmasi Password"
                     android:inputType="textPassword"
-                    android:drawableStart="@drawable/password_drawable"
-                    android:background="@drawable/primary_et_bg"/>
+                    android:paddingLeft="10dp" />
             </android.support.design.widget.TextInputLayout>
+
             <CheckBox
-                android:layout_marginTop="10dp"
+                android:id="@+id/checkbox_pemilik"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
                 android:text="Saya telah menyetujui
 term of service dan EULA"
-                android:textSize="15dp"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:textSize="15dp" />
+
             <Button
-                android:layout_marginTop="10dp"
+                android:id="@+id/btn_daftar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/primary_btn_bg"
                 android:text="Daftar"
                 android:textAllCaps="false"
-                android:background="@drawable/primary_btn_bg"
                 android:textColor="#fff"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
