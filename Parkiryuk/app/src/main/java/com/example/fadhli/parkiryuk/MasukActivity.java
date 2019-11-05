@@ -71,7 +71,6 @@ public class MasukActivity extends AppCompatActivity{
                                             finish();
                                         }
                                         else{
-                                            Log.i("Outputnya",status);
                                             Toast.makeText(MasukActivity.this, "Email atau password salah", Toast.LENGTH_LONG).show();
                                         }
                                     }
@@ -89,7 +88,6 @@ public class MasukActivity extends AppCompatActivity{
                     });
 
                 }else{
-                    //mAuth = FirebaseDatabase.getInstance().getReference().child("pemilik");
                     mAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -107,7 +105,6 @@ public class MasukActivity extends AppCompatActivity{
                                             finish();
                                         }
                                         else{
-                                            Log.i("Outputnya",status);
                                             Toast.makeText(MasukActivity.this, "Email atau password salah", Toast.LENGTH_LONG).show();
                                         }
                                     }
