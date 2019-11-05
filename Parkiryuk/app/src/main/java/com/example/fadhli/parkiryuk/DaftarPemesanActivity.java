@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ public class DaftarPemesanActivity extends AppCompatActivity{
     private Button btn_masuk,btn_daftar;
     private EditText nama_lengkap_user,email_user,kota_user,hp_user,password1_user,password2_user;
     private FirebaseAuth mAuth;
+    private CheckBox checkBox;
+
     public void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.daftar_pemesan_layout);
@@ -28,6 +31,7 @@ public class DaftarPemesanActivity extends AppCompatActivity{
         hp_user = findViewById(R.id.hp_user);
         password1_user = findViewById(R.id.password1_user);
         password2_user = findViewById(R.id.password2_user);
+        checkBox = findViewById(R.id.checkbox_user);
         mAuth = FirebaseAuth.getInstance();
 
         //Instansiasi UI_id
@@ -50,28 +54,34 @@ public class DaftarPemesanActivity extends AppCompatActivity{
             public void onClick(View v) {
                 String pass1 = password1_user.getText().toString();
                 String pass2 = password2_user.getText().toString();
-                if(pass1.equals(pass2)) {
-                    mAuth.createUserWithEmailAndPassword(email_user.getText().toString(), password1_user.getText().toString()).addOnCompleteListener(DaftarPemesanActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nama_pemesan").setValue(nama_lengkap_user.getText().toString());
-                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("asal_kota").setValue(kota_user.getText().toString());
-                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nohp_pemesan").setValue(hp_user.getText().toString());
-                                FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("status_akun").setValue("pemesan");
-                                Intent masuk = new Intent(DaftarPemesanActivity.this,MasukActivity.class);
-                                masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(masuk);
-                                finish();
-                                Toast.makeText(DaftarPemesanActivity.this, "Sign up Successful", Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(DaftarPemesanActivity.this, "Sign up Failed", Toast.LENGTH_LONG).show();
+
+                if(checkBox.isChecked()){
+                    if(pass1.equals(pass2)) {
+                        mAuth.createUserWithEmailAndPassword(email_user.getText().toString(), password1_user.getText().toString()).addOnCompleteListener(DaftarPemesanActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nama_pemesan").setValue(nama_lengkap_user.getText().toString());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("asal_kota").setValue(kota_user.getText().toString());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nohp_pemesan").setValue(hp_user.getText().toString());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("status_akun").setValue("pemesan");
+                                    Intent masuk = new Intent(DaftarPemesanActivity.this,MasukActivity.class);
+                                    masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(masuk);
+                                    finish();
+                                    Toast.makeText(DaftarPemesanActivity.this, "Sign up Successful", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Toast.makeText(DaftarPemesanActivity.this, "Sign up Failed", Toast.LENGTH_LONG).show();
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
+                    else{
+                        Toast.makeText(DaftarPemesanActivity.this, "Konfirmasi password salah. Silakan ubah agar password dan konfirmasi password sama", Toast.LENGTH_LONG).show();
+                    }
                 }
                 else{
-                    Toast.makeText(DaftarPemesanActivity.this, "Konfirmasi password salah. Silakan ubah agar password dan konfirmasi password sama", Toast.LENGTH_LONG).show();
+                    Toast.makeText(DaftarPemesanActivity.this, "Anda harus setuju terhadap term of service dan EULA", Toast.LENGTH_LONG).show();
                 }
             }
         });
