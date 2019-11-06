@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
     <LinearLayout
         android:id="@+id/l_toolbar_top"
         android:layout_width="match_parent"
@@ -43,17 +44,32 @@
                 android:background="@drawable/help_drawable"/>
         </LinearLayout>
     </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_tempat_parkir"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_below="@+id/l_toolbar_top">
-    </android.support.v7.widget.RecyclerView>
-    <android.support.design.widget.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-    </android.support.design.widget.BottomNavigationView>
-</RelativeLayout>
+        android:layout_margin="40dp"
+        android:layout_gravity="center"
+        android:gravity=""
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NAMA PEMESAN"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="email@mail.com"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ASAL KOTA"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XXXXXXXXXXXXX"
+            android:textAlignment="center"/>
+    </LinearLayout>
+</LinearLayout>

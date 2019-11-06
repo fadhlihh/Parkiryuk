@@ -18,6 +18,6 @@
         </activity>
         <activity android:name=".DaftarPemesanActivity"/>
         <activity android:name=".DaftarPemilikActivity"/>
-        <activity android:name=".ListTempatParkirAcrivity"/>
+        <activity android:name=".PemesanActivity"/>
     </application>
 </manifest>

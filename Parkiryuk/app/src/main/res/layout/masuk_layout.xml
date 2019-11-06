@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="180dp"
         android:background="@drawable/bg_masuk_header"
         >
         <ImageView
@@ -17,119 +17,122 @@
             android:layout_gravity="center"
             />
     </LinearLayout>
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="30dp"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        >
-        <TextView
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Siapakah anda?"
-            android:textColor="#414351"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
-        <RadioGroup
-            android:id="@+id/rg_mode_user"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
-            <RadioButton
-                android:id="@+id/rb_pemesan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pemesan"
-                android:layout_marginRight="10dp"
-                android:textSize="18dp"
-                android:checked="true"
-                android:button="@drawable/toggle_user"/>
-            <RadioButton
-                android:id="@+id/rb_pemilik"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Pemilik Parkir"
-                android:textSize="18dp"
-                android:button="@drawable/toggle_user"/>
-        </RadioGroup>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:hintEnabled="false"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
             >
-            <EditText
-                android:id="@+id/et_email"
-                android:paddingLeft="10dp"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                android:drawableStart="@drawable/username_drawable"
-                android:background="@drawable/primary_et_bg"/>
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:hintEnabled="false"
-            app:passwordToggleContentDescription="show"
-            app:passwordToggleDrawable="@drawable/toggle_password"
-            app:passwordToggleEnabled="true">
-            <EditText
-                android:id="@+id/et_password"
-                android:paddingLeft="10dp"
+                android:text="Siapakah anda?"
+                android:textColor="#414351"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+            <RadioGroup
+                android:id="@+id/rg_mode_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:drawableStart="@drawable/password_drawable"
-                android:background="@drawable/primary_et_bg"
-                />
-        </android.support.design.widget.TextInputLayout>
-        <Button
-            android:id="@+id/btn_masuk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/primary_btn_bg"
-            android:text="Masuk"
-            android:textAllCaps="false"
-            android:textColor="#fff"
-            android:textSize="18dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
-            android:text="Belum Punya Akun?"
-            android:textColor="#414351"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
-        <Button
-            android:id="@+id/btn_daftar_pemesan"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/secondary_btn_bg"
-            android:text="Daftar pemesan parkir"
-            android:textAllCaps="false"
-            android:textColor="#fff"
-            android:textSize="18dp"/>
-        <Button
-            android:id="@+id/btn_daftar_pemilik"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/secondary_btn_bg"
-            android:text="Daftar pemilik parkir"
-            android:textAllCaps="false"
-            android:textColor="#fff"
-            android:textSize="18dp"/>
-    </LinearLayout>
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <RadioButton
+                    android:id="@+id/rb_pemesan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pemesan"
+                    android:layout_marginRight="10dp"
+                    android:textSize="18dp"
+                    android:checked="true"
+                    android:button="@drawable/toggle_user"/>
+                <RadioButton
+                    android:id="@+id/rb_pemilik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Pemilik Parkir"
+                    android:textSize="18dp"
+                    android:button="@drawable/toggle_user"/>
+            </RadioGroup>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                android:layout_marginTop="5dp"
+                >
+                <EditText
+                    android:id="@+id/et_email"
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:drawableStart="@drawable/username_drawable"
+                    android:background="@drawable/primary_et_bg"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:hintEnabled="false"
+                app:passwordToggleContentDescription="show"
+                app:passwordToggleDrawable="@drawable/toggle_password"
+                app:passwordToggleEnabled="true">
+                <EditText
+                    android:id="@+id/et_password"
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:drawableStart="@drawable/password_drawable"
+                    android:background="@drawable/primary_et_bg"
+                    />
+            </android.support.design.widget.TextInputLayout>
+            <Button
+                android:id="@+id/btn_masuk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/primary_btn_bg"
+                android:text="Masuk"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:text="Belum Punya Akun?"
+                android:textColor="#414351"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+            <Button
+                android:id="@+id/btn_daftar_pemesan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/secondary_btn_bg"
+                android:text="Daftar pemesan parkir"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"/>
+            <Button
+                android:id="@+id/btn_daftar_pemilik"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/secondary_btn_bg"
+                android:text="Daftar pemilik parkir"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
