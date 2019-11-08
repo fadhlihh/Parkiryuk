@@ -51,25 +51,33 @@
         android:layout_gravity="center"
         android:gravity=""
         android:orientation="vertical">
+
         <TextView
+            android:id="@+id/user_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="NAMA PEMESAN"
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
+
         <TextView
+            android:id="@+id/user_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="email@mail.com"
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
+
         <TextView
+            android:id="@+id/user_kota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ASAL KOTA"
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
+
         <TextView
+            android:id="@+id/user_hp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="XXXXXXXXXXXXX"
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
     </LinearLayout>
 </LinearLayout>
