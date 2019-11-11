@@ -19,5 +19,6 @@
         <activity android:name=".DaftarPemesanActivity"/>
         <activity android:name=".DaftarPemilikActivity"/>
         <activity android:name=".PemesanActivity"/>
+        <activity android:name=".PemilikActivity"/>
     </application>
 </manifest>

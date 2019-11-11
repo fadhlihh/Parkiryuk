@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/l_toolbar_top"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#45B8AC"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/sort_drawable"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".60"
+                android:layout_marginLeft="3dp"
+                app:hintEnabled="false">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="5dp"
+                    android:hint="Cari tempat parkir"
+                    android:drawableStart="@drawable/search_drawable"
+                    android:background="@drawable/et_search_drawable"/>
+            </android.support.design.widget.TextInputLayout>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/help_drawable"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="40dp"
+        android:layout_gravity="center"
+        android:gravity=""
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tempat_parkir_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NAMA TEMPAT PARKIR"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/tempat_parkir_alamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jl. XXXXXXXXXXXXXXXXXXXXXXX"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/tempat_parkir_jam_buka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XX.XX"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/pemilik_hp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XXXXXXXXXXXXX"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/pemilik_slot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="XXXXXXXXXXXXX"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/pemilik_harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XXXXXXXXXXXXX"
+            android:textAlignment="center" />
+    </LinearLayout>
+</LinearLayout>
