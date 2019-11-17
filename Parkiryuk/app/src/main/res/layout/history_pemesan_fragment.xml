@@ -33,7 +33,7 @@
                     android:layout_height="60dp"
                     android:paddingLeft="20dp"
                     android:paddingBottom="5dp"
-                    android:hint="Cari tempat parkir"
+                    android:hint="Cari history parkir"
                     android:drawableStart="@drawable/search_drawable"
                     android:background="@drawable/et_search_drawable"/>
             </android.support.design.widget.TextInputLayout>
@@ -44,15 +44,30 @@
                 android:background="@drawable/help_drawable"/>
         </LinearLayout>
     </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_history"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
-    </android.support.v7.widget.RecyclerView>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="55dp"
+            android:orientation="vertical">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+            </android.support.v7.widget.RecyclerView>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_red"
+                android:text="Bersihkan history"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

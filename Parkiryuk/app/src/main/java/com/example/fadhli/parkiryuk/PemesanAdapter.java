@@ -37,7 +37,7 @@ public class PemesanAdapter extends RecyclerView.Adapter<PemesanAdapter.PemesanV
             holder.statusSampai.setText("Belum Sampai");
             holder.btnStatus.setBackgroundResource(R.drawable.btn_sampai);
         }
-        holder.harga.setText(String.valueOf(dataList.get(position).getHarga()));
+        holder.harga.setText("Rp "+String.valueOf(dataList.get(position).getHarga()));
     }
 
     @Override

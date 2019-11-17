@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:orientation="vertical">
     <LinearLayout
         android:id="@+id/l_toolbar_top"
@@ -11,140 +12,192 @@
         android:background="#45B8AC"
         android:orientation="horizontal"
         android:gravity="center_vertical">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/sort_drawable"/>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".60"
-                android:layout_marginLeft="3dp"
-                app:hintEnabled="false">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:paddingLeft="20dp"
-                    android:paddingBottom="5dp"
-                    android:hint="Cari tempat parkir"
-                    android:drawableStart="@drawable/search_drawable"
-                    android:background="@drawable/et_search_drawable"/>
-            </android.support.design.widget.TextInputLayout>
+            android:layout_marginRight="10dp">
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/help_drawable"/>
-        </LinearLayout>
+                android:background="@drawable/help_drawable"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
     </LinearLayout>
-    <TableLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp">
-        <TableRow>
-            <TextView android:layout_width="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardElevation="3dp"
+        card_view:cardUseCompatPadding="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TableLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="ID Parkir"/>
-            <TextView android:layout_width="0dp"
+                android:layout_margin="30dp">
+                <TableRow>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="ID Parkir"
+                        android:textSize="21dp"
+                        android:textStyle="bold"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:text=":"
+                        android:textAlignment="center"
+                        android:textSize="21dp"
+                        android:textStyle="bold"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="XXXXXXXXX"
+                        android:textSize="21dp"
+                        android:textStyle="bold"
+                        android:textColor="#415363"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="Tempat Parkir"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:text=":"
+                        android:textSize="18dp"
+                        android:textAlignment="center"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="XXXXXXXXX"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="Tanggal Parkir"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:text=":"
+                        android:textSize="18dp"
+                        android:textAlignment="center"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="XXX, XX-XX-XXXX"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="Harga Per Jam"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:text=":"
+                        android:textAlignment="center"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="Rp XXXXXXX"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="Jam Buka - Tutup"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:text=":"
+                        android:textSize="18dp"
+                        android:textAlignment="center"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="XX.XX - XX.XX"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="Status Parkir"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:text=":"
+                        android:textSize="18dp"
+                        android:textAlignment="center"
+                        android:textColor="#415363"/>
+                    <TextView android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="XXXXXXXXX"
+                        android:textSize="18dp"
+                        android:textColor="#415363"/>
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:text=":"/>
-            <TextView android:layout_width="0dp"
+                android:text="XX.XX.XX"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="#415363"/>
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="XXXXXXXXX"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:layout_width="0dp"
+                android:text="Rp XXXXXXX"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="#3CB878"/>
+            <Button
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="Tempat Parkir"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:text=":"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="XXXXXXXXX"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="Tanggal Parkir"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:text=":"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="XXX, XX-XX-XXXX"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="Harga Per Jam"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:text=":"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="Rp XXXXXXX"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="Jam Buka - Tutup"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:text=":"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="XX.XX - XX.XX"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="Status Parkir"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:text=":"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:text="XXXXXXXXX"/>
-        </TableRow>
-    </TableLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="XX.XX.XX"
-        android:textAlignment="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rp XXXXXXX"
-        android:textAlignment="center"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"/>
+                android:layout_margin="30dp"
+                android:background="@drawable/btn_rect_red"
+                android:text="Batalkan Pemesanan"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>

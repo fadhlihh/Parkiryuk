@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#fff">
     <LinearLayout
         android:id="@+id/l_toolbar_top"
         android:layout_width="match_parent"
@@ -11,86 +12,93 @@
         android:background="#45B8AC"
         android:orientation="horizontal"
         android:gravity="center_vertical">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/sort_drawable"/>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".60"
-                android:layout_marginLeft="3dp"
-                app:hintEnabled="false">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:paddingLeft="20dp"
-                    android:paddingBottom="5dp"
-                    android:hint="Cari tempat parkir"
-                    android:drawableStart="@drawable/search_drawable"
-                    android:background="@drawable/et_search_drawable"/>
-            </android.support.design.widget.TextInputLayout>
+            android:layout_marginRight="10dp">
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/help_drawable"/>
+                android:background="@drawable/help_drawable"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"
+            android:gravity=""
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pic_profile_pemilik"
+                />
+            <TextView
+                android:id="@+id/tempat_parkir_nama"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NAMA TEMPAT PARKIR"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/tempat_parkir_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jl. XXXXXXXXXXXXXXXXXXXXXXX"
+                android:textAlignment="center"
+                android:textSize="20dp"/>
+            <TextView
+                android:id="@+id/tempat_parkir_jam_buka"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="XX.XX - XX.XX"
+                android:textSize="20dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/pemilik_hp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="XXXXXXXXXXXXX"
+                android:textAlignment="center"
+                android:textSize="20dp"/>
+            <TextView
+                android:id="@+id/pemilik_slot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="XXXXXXXXXXXXX"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#414351"/>
+            <TextView
+                android:id="@+id/pemilik_harga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="XXXXXXXXXXXXX"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#414351"/>
+            <Button
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/primary_btn_bg"
+                android:text="Keluar"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"/>
         </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="40dp"
-        android:layout_gravity="center"
-        android:gravity=""
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tempat_parkir_nama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="NAMA TEMPAT PARKIR"
-            android:textAlignment="center" />
-
-        <TextView
-            android:id="@+id/tempat_parkir_alamat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Jl. XXXXXXXXXXXXXXXXXXXXXXX"
-            android:textAlignment="center" />
-
-        <TextView
-            android:id="@+id/tempat_parkir_jam_buka"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="XX.XX"
-            android:textAlignment="center" />
-
-        <TextView
-            android:id="@+id/pemilik_hp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="XXXXXXXXXXXXX"
-            android:textAlignment="center" />
-        <TextView
-            android:id="@+id/pemilik_slot"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="XXXXXXXXXXXXX"
-            android:textAlignment="center" />
-        <TextView
-            android:id="@+id/pemilik_harga"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="XXXXXXXXXXXXX"
-            android:textAlignment="center" />
-    </LinearLayout>
 </LinearLayout>

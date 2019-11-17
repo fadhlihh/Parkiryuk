@@ -31,23 +31,33 @@
             <TextView
                 android:id="@+id/tv_nama_tempat"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="#415363"/>
             <TextView
                 android:id="@+id/tv_alamat_tempat"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textSize="15dp"/>
             <TextView
                 android:id="@+id/tv_jam_buka"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textSize="15dp"/>
             <TextView
+                android:layout_marginTop="5dp"
                 android:id="@+id/tv_sisa_slot"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="#414351"/>
             <TextView
                 android:id="@+id/tv_harga_parkir"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#414351"/>
         </LinearLayout>
         <ImageButton
             android:id="@+id/ib_pesan"

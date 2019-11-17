@@ -30,8 +30,8 @@ public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapte
         holder.nama.setText(dataList.get(position).getNama());
         holder.alamat.setText(dataList.get(position).getAlamat());
         holder.jamBuka.setText(dataList.get(position).getJamBuka());
-        holder.sisaSlot.setText(String.valueOf(dataList.get(position).getSisaSlot()));
-        holder.hargaParkir.setText(String.valueOf(dataList.get(position).getHargaParkir()));
+        holder.sisaSlot.setText("Sisa "+String.valueOf(dataList.get(position).getSisaSlot())+" slot tersedia");
+        holder.hargaParkir.setText("Rp "+String.valueOf(dataList.get(position).getHargaParkir()));
         if(dataList.get(position).getStatusOnline()){
             holder.statusOnline.setImageResource(R.drawable.parkir_online);
         }else{
