@@ -25,80 +25,49 @@
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
     </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
+    <RadioGroup
+        android:id="@+id/rg_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rb_profile_background"
+        android:checkedButton="@id/rb_look_profile"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <RadioButton
+            android:id="@+id/rb_look_profile"
+            android:width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"
-            android:layout_gravity="center"
-            android:gravity=""
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/pic_profile_pemilik"
-                />
-            <TextView
-                android:id="@+id/tempat_parkir_nama"
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="NAMA TEMPAT PARKIR"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:textColor="#415363"
-                android:textAlignment="center" />
-            <TextView
-                android:id="@+id/tempat_parkir_alamat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Jl. XXXXXXXXXXXXXXXXXXXXXXX"
-                android:textAlignment="center"
-                android:textSize="20dp"/>
-            <TextView
-                android:id="@+id/tempat_parkir_jam_buka"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="XX.XX - XX.XX"
-                android:textSize="20dp"
-                android:textAlignment="center"/>
-
-            <TextView
-                android:id="@+id/pemilik_hp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="XXXXXXXXXXXXX"
-                android:textAlignment="center"
-                android:textSize="20dp"/>
-            <TextView
-                android:id="@+id/pemilik_slot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="XXXXXXXXXXXXX"
-                android:textAlignment="center"
-                android:textSize="22dp"
-                android:textStyle="bold"
-                android:textColor="#414351"/>
-            <TextView
-                android:id="@+id/pemilik_harga"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="XXXXXXXXXXXXX"
-                android:textAlignment="center"
-                android:textSize="22dp"
-                android:textStyle="bold"
-                android:textColor="#414351"/>
-            <Button
-                android:layout_marginTop="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/primary_btn_bg"
-                android:text="Keluar"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="18dp"/>
-        </LinearLayout>
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/rb_look_profile"
+            android:button="@null"
+            android:text="Profile"
+            android:textSize="18dp"
+            android:textColor="@drawable/rb_text_profile"/>
+        <RadioButton
+            android:id="@+id/rb_edit_profile"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/rb_look_profile"
+            android:button="@null"
+            android:text="Edit Profil"
+            android:textSize="18dp"
+            android:textColor="@drawable/rb_text_profile"/>
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/fl_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    </FrameLayout>
 </LinearLayout>

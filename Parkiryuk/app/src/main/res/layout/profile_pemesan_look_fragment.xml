@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingBottom="45dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pic_profile_pemesan"
+
+                />
+            <TextView
+                android:id="@+id/user_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NAMA PEMESAN"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="email@mail.com"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/user_kota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ASAL KOTA"
+                android:textSize="20dp"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/user_hp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="XXXXXXXXXXXXX"
+                android:textSize="20dp"
+                android:textAlignment="center" />
+            <Button
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/primary_btn_bg"
+                android:text="Keluar"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
