@@ -41,11 +41,16 @@ public class ListTempatParkirFragment extends android.support.v4.app.Fragment {
                     if (status.equals("pemilik")){
                         String nama = childSnapshot.child("nama_tempat").getValue().toString().trim();
                         String alamat = childSnapshot.child("alamat").getValue().toString().trim();
+                        String pemilik_jam_buka= childSnapshot.child("jam_buka").getValue().toString().trim();
+                        String pemilik_jam_tutup= childSnapshot.child("jam_tutup").getValue().toString().trim();
+                        String pemilik_menit_buka= childSnapshot.child("menit_buka").getValue().toString().trim();
+                        String pemilik_menit_tutup= childSnapshot.child("menit_tutup").getValue().toString().trim();
+                        String jadwal = pemilik_jam_buka+"."+pemilik_menit_buka+" - "+pemilik_jam_tutup+"."+pemilik_menit_tutup;
                         int slot = Long.valueOf(childSnapshot.child("jml_slot").getValue().toString()).intValue();
                         int harga = Long.valueOf(childSnapshot.child("harga_per_jam").getValue().toString()).intValue();
-                        tempatParkirArrayList.add(new TempatParkir(nama,alamat,"10.00-23.00", slot, harga,true));
+                        tempatParkirArrayList.add(new TempatParkir(nama,alamat, jadwal, slot, harga,true));
                     } else{
-                        Log.d("ids", status);
+                        //Log.d("ids", status);
                     }
                 }
                 adapter = new TempatParkirAdapter(tempatParkirArrayList);

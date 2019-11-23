@@ -38,13 +38,14 @@
                 android:text="Jl. XXXXXXXXXXXXXXXXXXXXXXX"
                 android:textAlignment="center"
                 android:textSize="20dp"/>
+
             <TextView
                 android:id="@+id/tempat_parkir_jam_buka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="XX.XX - XX.XX"
-                android:textSize="20dp"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/pemilik_hp"
@@ -72,15 +73,17 @@
                 android:textSize="22dp"
                 android:textStyle="bold"
                 android:textColor="#414351"/>
+
             <Button
-                android:layout_marginTop="30dp"
+                android:id="@+id/pemilik_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/primary_btn_bg"
                 android:text="Keluar"
                 android:textAllCaps="false"
                 android:textColor="#fff"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
         </LinearLayout>
     </ScrollView>
 

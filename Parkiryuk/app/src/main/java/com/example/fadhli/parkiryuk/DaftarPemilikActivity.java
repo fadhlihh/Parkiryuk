@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class DaftarPemilikActivity extends AppCompatActivity{
     private Button btn_masuk,btn_daftar;
-    private EditText nama_tempat_pemilik,email_pemilik,alamat_pemilik,hp_pemilik,slot_pemilik,harga_pemilik,password1_pemilik,password2_pemilik;
+    private EditText nama_tempat_pemilik,email_pemilik,alamat_pemilik,hp_pemilik,slot_pemilik,harga_pemilik,password1_pemilik,password2_pemilik, jam_buka, jam_tutup, menit_buka, menit_tutup;
     private FirebaseAuth mAuth;
     private CheckBox checkBox;
     public void onCreate(Bundle saveInstanceState){
@@ -33,6 +33,10 @@ public class DaftarPemilikActivity extends AppCompatActivity{
         harga_pemilik = findViewById(R.id.harga_pemilik);
         password1_pemilik = findViewById(R.id.password1_pemilik);
         password2_pemilik = findViewById(R.id.password2_pemilik);
+        jam_buka = findViewById(R.id.jam_buka);
+        jam_tutup = findViewById(R.id.jam_tutup);
+        menit_buka = findViewById(R.id.menit_buka);
+        menit_tutup = findViewById(R.id.menit_tutup);
         checkBox = findViewById(R.id.checkbox_pemilik);
         mAuth = FirebaseAuth.getInstance();
 
@@ -64,6 +68,10 @@ public class DaftarPemilikActivity extends AppCompatActivity{
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nohp_pemilik").setValue(hp_pemilik.getText().toString());
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("jml_slot").setValue(slot_pemilik.getText().toString());
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("harga_per_jam").setValue(harga_pemilik.getText().toString());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("jam_buka").setValue(jam_buka.getText().toString());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("jam_tutup").setValue(jam_tutup.getText().toString());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("menit_buka").setValue(menit_buka.getText().toString());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("menit_tutup").setValue(menit_tutup.getText().toString());
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("status_akun").setValue("pemilik");
                                     Intent masuk = new Intent(DaftarPemilikActivity.this,MasukActivity.class);
                                     masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
