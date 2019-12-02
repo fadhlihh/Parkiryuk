@@ -1,17 +1,34 @@
 package com.example.fadhli.parkiryuk;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatImageButton;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapter.TempatParkirViewHolder> {
     private ArrayList<TempatParkir> dataList;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     public TempatParkirAdapter(ArrayList<TempatParkir> dataList){
         this.dataList = dataList;
@@ -26,7 +43,8 @@ public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TempatParkirViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TempatParkirViewHolder holder, final int position) {
+        View view;
         holder.nama.setText(dataList.get(position).getNama());
         holder.alamat.setText(dataList.get(position).getAlamat());
         holder.jamBuka.setText(dataList.get(position).getJamBuka());
@@ -37,8 +55,54 @@ public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapte
         }else{
             holder.statusOnline.setImageResource(R.drawable.parkir_offline);
         }
-    }
+        holder.btn_pesan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseDatabase.getInstance().getReference().child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String nama_pemesan = dataSnapshot.child(mAuth.getCurrentUser().getUid()).child("nama_pemesan").getValue().toString().trim();
+                        for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
+                            String status = childSnapshot.child("status_akun").getValue().toString().trim();
+                            if (status.equals("pemilik")){
+                                String nama = childSnapshot.child("nama_tempat").getValue().toString().trim();
+                                String uID = childSnapshot.getKey().toString().trim();
+                                String nama2 = dataList.get(position).getNama();
+                                if(nama2.equals(nama)){
+                                    String time =  String.valueOf(new Date().getTime()/1000);
+                                    String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("nama_tempat").setValue(dataList.get(position).getNama());
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("tanggal").setValue(date);
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("harga").setValue(dataList.get(position).getHargaParkir());
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("jam_buka_tutup").setValue(dataList.get(position).getJamBuka());
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("status_parkir").setValue("Belum Parkir");
+
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("nama_pemesan").setValue(nama_pemesan);
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("status_parkir").setValue("Dalam Perjalanan");
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("tanggal").setValue(date);
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("harga").setValue(dataList.get(position).getHargaParkir());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).child("last_id_parkir").setValue(time);
+                                    //timer start
+
+                                    // HELPPPP!!!!!!!!  Intent profil = new Intent(TempatParkirAdapter.this, PemesanActivity.class);
+                                    // HELPPPP!!!!!!!!  profil.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    // HELPPPP!!!!!!!!  startActivity(profil);
+                                    // Toast.makeText(PemesanActivity.this, "Pemesanan berhasil! Hati-hati di perjalanan :)", Toast.LENGTH_LONG).show();
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+    }
     @Override
     public int getItemCount() {
         return (dataList != null)?dataList.size():0;
@@ -47,6 +111,7 @@ public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapte
     public class TempatParkirViewHolder extends RecyclerView.ViewHolder{
         private TextView nama,alamat,jamBuka,sisaSlot,hargaParkir;
         private ImageView statusOnline;
+        private AppCompatImageButton btn_pesan;
         public TempatParkirViewHolder(View view){
             super(view);
             nama = (TextView)view.findViewById(R.id.tv_nama_tempat);
@@ -55,6 +120,7 @@ public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapte
             sisaSlot = (TextView)view.findViewById(R.id.tv_sisa_slot);
             hargaParkir = (TextView)view.findViewById(R.id.tv_harga_parkir);
             statusOnline = (ImageView) view.findViewById(R.id.iv_status_online);
+            btn_pesan = (AppCompatImageButton)view.findViewById(R.id.ib_pesan);
         }
     }
 }

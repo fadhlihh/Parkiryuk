@@ -59,6 +59,7 @@
                 android:textSize="18dp"
                 android:textColor="#414351"/>
         </LinearLayout>
+
         <ImageButton
             android:id="@+id/ib_pesan"
             android:layout_width="wrap_content"

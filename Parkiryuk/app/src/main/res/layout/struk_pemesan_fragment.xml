@@ -59,13 +59,16 @@
                         android:textSize="21dp"
                         android:textStyle="bold"
                         android:textColor="#415363"/>
-                    <TextView android:layout_width="0dp"
+
+                    <TextView
+                        android:id="@+id/struk_id_parkir"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:text="XXXXXXXXX"
+                        android:textColor="#415363"
                         android:textSize="21dp"
-                        android:textStyle="bold"
-                        android:textColor="#415363"/>
+                        android:textStyle="bold" />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="0dp"
@@ -81,12 +84,15 @@
                         android:textSize="18dp"
                         android:textAlignment="center"
                         android:textColor="#415363"/>
-                    <TextView android:layout_width="0dp"
+
+                    <TextView
+                        android:id="@+id/struk_tempat_parkir"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:text="XXXXXXXXX"
-                        android:textSize="18dp"
-                        android:textColor="#415363"/>
+                        android:textColor="#415363"
+                        android:textSize="18dp" />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="0dp"
@@ -102,12 +108,15 @@
                         android:textSize="18dp"
                         android:textAlignment="center"
                         android:textColor="#415363"/>
-                    <TextView android:layout_width="0dp"
+
+                    <TextView
+                        android:id="@+id/struk_tanggal_parkir"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:text="XXX, XX-XX-XXXX"
-                        android:textSize="18dp"
-                        android:textColor="#415363"/>
+                        android:textColor="#415363"
+                        android:textSize="18dp" />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="0dp"
@@ -123,12 +132,15 @@
                         android:textAlignment="center"
                         android:textSize="18dp"
                         android:textColor="#415363"/>
-                    <TextView android:layout_width="0dp"
+
+                    <TextView
+                        android:id="@+id/struk_harga_per_jam"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:text="Rp XXXXXXX"
-                        android:textSize="18dp"
-                        android:textColor="#415363"/>
+                        android:textColor="#415363"
+                        android:textSize="18dp" />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="0dp"
@@ -144,12 +156,15 @@
                         android:textSize="18dp"
                         android:textAlignment="center"
                         android:textColor="#415363"/>
-                    <TextView android:layout_width="0dp"
+
+                    <TextView
+                        android:id="@+id/struk_jam_buka_tutup"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:text="XX.XX - XX.XX"
-                        android:textSize="18dp"
-                        android:textColor="#415363"/>
+                        android:textColor="#415363"
+                        android:textSize="18dp" />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="0dp"
@@ -165,30 +180,37 @@
                         android:textSize="18dp"
                         android:textAlignment="center"
                         android:textColor="#415363"/>
-                    <TextView android:layout_width="0dp"
+
+                    <TextView
+                        android:id="@+id/struk_status_parkir"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:text="XXXXXXXXX"
-                        android:textSize="18dp"
-                        android:textColor="#415363"/>
+                        android:textColor="#415363"
+                        android:textSize="18dp" />
                 </TableRow>
             </TableLayout>
+
             <TextView
+                android:id="@+id/struk_durasi_parkir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="XX.XX.XX"
                 android:textAlignment="center"
+                android:textColor="#415363"
                 android:textSize="25dp"
-                android:textStyle="bold"
-                android:textColor="#415363"/>
+                android:textStyle="bold" />
+
             <TextView
+                android:id="@+id/struk_harga_total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rp XXXXXXX"
                 android:textAlignment="center"
+                android:textColor="#3CB878"
                 android:textSize="25dp"
-                android:textStyle="bold"
-                android:textColor="#3CB878"/>
+                android:textStyle="bold" />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
