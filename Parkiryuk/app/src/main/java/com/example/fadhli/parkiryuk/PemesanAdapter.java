@@ -67,7 +67,6 @@ public class PemesanAdapter extends RecyclerView.Adapter<PemesanAdapter.PemesanV
 
                                         FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(uID).child(time).child("status_parkir").setValue("Selesai");
                                         FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(mAuth.getCurrentUser().getUid()).child(time).child("status_parkir").setValue("Selesai");
-                                        ((MainActivity)context).resetGraph(context);
                                         break;
                                     }
                                 }

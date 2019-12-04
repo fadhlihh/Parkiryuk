@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -25,6 +26,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapter.TempatParkirViewHolder> {
     private ArrayList<TempatParkir> dataList;
@@ -57,7 +60,7 @@ public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapte
         }
         holder.btn_pesan.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 FirebaseDatabase.getInstance().getReference().child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -83,13 +86,8 @@ public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapte
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("tanggal").setValue(date);
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("harga").setValue(dataList.get(position).getHargaParkir());
                                     FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).child("last_id_parkir").setValue(time);
+                                    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid());
                                     //timer start
-
-                                    // HELPPPP!!!!!!!!  Intent profil = new Intent(TempatParkirAdapter.this, PemesanActivity.class);
-                                    // HELPPPP!!!!!!!!  profil.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    // HELPPPP!!!!!!!!  startActivity(profil);
-                                    // Toast.makeText(PemesanActivity.this, "Pemesanan berhasil! Hati-hati di perjalanan :)", Toast.LENGTH_LONG).show();
-                                    break;
                                 }
                             }
                         }

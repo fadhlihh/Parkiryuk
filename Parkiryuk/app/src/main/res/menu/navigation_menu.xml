@@ -6,9 +6,6 @@
     <item android:id="@+id/profile_nav"
         android:title="Profile"
         android:icon="@drawable/profile_drawable"/>
-    <item android:id="@+id/struk_nav"
-        android:title="Struk"
-        android:icon="@drawable/struk_drawable"/>
     <item android:id="@+id/history_nav"
         android:title="History"
         android:icon="@drawable/history_drawable"/>

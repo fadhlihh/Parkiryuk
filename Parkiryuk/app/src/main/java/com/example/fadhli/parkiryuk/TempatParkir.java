@@ -1,7 +1,5 @@
 package com.example.fadhli.parkiryuk;
 
-import android.widget.Button;
-
 public class TempatParkir {
     private String nama,alamat,jamBuka;
     private int sisaSlot,hargaParkir;

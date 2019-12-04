@@ -9,17 +9,39 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class PemesanActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pemesan_layout);
+        FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.child("last_id_parkir").exists()){
+                    Toast.makeText(PemesanActivity.this, "Pemesanan berhasil! Hati-hati di perjalanan :)", Toast.LENGTH_LONG).show();
+                    loadFragment(new StrukFragment());
+                }else{
+                    loadFragment(new ListTempatParkirFragment());
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         //fragment management
-        loadFragment(new ListTempatParkirFragment());
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
@@ -37,13 +59,25 @@ public class PemesanActivity extends AppCompatActivity implements BottomNavigati
 
         switch(item.getItemId()){
             case R.id.home_nav:
-                fragment = new ListTempatParkirFragment();
+                FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.child("last_id_parkir").exists()){
+                            Toast.makeText(PemesanActivity.this, "Pemesanan berhasil! Hati-hati di perjalanan :)", Toast.LENGTH_LONG).show();
+                            loadFragment(new StrukFragment());
+                        }else{
+                            loadFragment(new ListTempatParkirFragment());
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
                 break;
             case R.id.profile_nav:
                 fragment = new ProfileFragment();
-                break;
-            case R.id.struk_nav:
-                fragment = new StrukFragment();
                 break;
             case R.id.history_nav:
                 fragment = new HistoryFragment();

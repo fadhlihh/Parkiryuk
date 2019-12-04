@@ -60,7 +60,6 @@ public class MasukActivity extends AppCompatActivity{
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                         String status = dataSnapshot.child("status_akun").getValue().toString().trim();
                                         if(status.equals("pemesan")){
-                                            Toast.makeText(MasukActivity.this, "Sign in Successful", Toast.LENGTH_LONG).show();
                                             Intent masuk = new Intent(MasukActivity.this,PemesanActivity.class);
                                             masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                             startActivity(masuk);
@@ -94,7 +93,6 @@ public class MasukActivity extends AppCompatActivity{
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                         String status = dataSnapshot.child("status_akun").getValue().toString().trim();
                                         if(status.equals("pemilik")){
-                                            Toast.makeText(MasukActivity.this, "Sign in Successful", Toast.LENGTH_LONG).show();
                                             Intent masuk = new Intent(MasukActivity.this,PemilikActivity.class);
                                             masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                             startActivity(masuk);
