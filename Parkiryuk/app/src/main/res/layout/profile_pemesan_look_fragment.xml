@@ -21,39 +21,36 @@
                 android:src="@drawable/pic_profile_pemesan"
 
                 />
+
             <TextView
                 android:id="@+id/user_nama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NAMA PEMESAN"
-                android:textSize="25dp"
-                android:textStyle="bold"
+                android:textAlignment="center"
                 android:textColor="#415363"
-                android:textAlignment="center" />
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/user_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="email@mail.com"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/user_kota"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ASAL KOTA"
-                android:textSize="20dp"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/user_hp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="XXXXXXXXXXXXX"
-                android:textSize="20dp"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/pemesan_logout"

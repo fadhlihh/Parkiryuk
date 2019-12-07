@@ -65,7 +65,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:text="XXXXXXXXX"
                         android:textColor="#415363"
                         android:textSize="21dp"
                         android:textStyle="bold" />
@@ -90,7 +89,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:text="XXXXXXXXX"
                         android:textColor="#415363"
                         android:textSize="18dp" />
                 </TableRow>
@@ -114,7 +112,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:text="XXX, XX-XX-XXXX"
                         android:textColor="#415363"
                         android:textSize="18dp" />
                 </TableRow>
@@ -138,7 +135,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:text="Rp XXXXXXX"
                         android:textColor="#415363"
                         android:textSize="18dp" />
                 </TableRow>
@@ -162,7 +158,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:text="XX.XX - XX.XX"
                         android:textColor="#415363"
                         android:textSize="18dp" />
                 </TableRow>
@@ -186,7 +181,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:text="XXXXXXXXX"
                         android:textColor="#415363"
                         android:textSize="18dp" />
                 </TableRow>
@@ -196,7 +190,6 @@
                 android:id="@+id/struk_durasi_parkir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="XX.XX.XX"
                 android:textAlignment="center"
                 android:textColor="#415363"
                 android:textSize="25dp"
@@ -206,7 +199,6 @@
                 android:id="@+id/struk_harga_total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rp XXXXXXX"
                 android:textAlignment="center"
                 android:textColor="#3CB878"
                 android:textSize="25dp"

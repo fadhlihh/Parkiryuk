@@ -41,7 +41,30 @@ public class MasukActivity extends AppCompatActivity{
         email = (EditText)findViewById(R.id.et_email);
         password = (EditText)findViewById(R.id.et_password);
         mAuth = FirebaseAuth.getInstance();
+        if (mAuth.getCurrentUser() != null) {
+            FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).child("status_akun").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.getValue().toString().equals("pemesan")){
+                        Intent masuk = new Intent(MasukActivity.this,PemesanActivity.class);
+                        masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(masuk);
+                        finish();
+                    }
+                    else{
+                        Intent masuk = new Intent(MasukActivity.this,PemilikActivity.class);
+                        masuk.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(masuk);
+                        finish();
+                    }
+                }
 
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
         //ketika button masuk diklik
         btn_masuk.setOnClickListener(new View.OnClickListener() {
             @Override

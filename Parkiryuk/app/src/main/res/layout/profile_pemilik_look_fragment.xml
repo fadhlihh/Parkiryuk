@@ -21,29 +21,28 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/pic_profile_pemilik"
                 />
+
             <TextView
                 android:id="@+id/tempat_parkir_nama"
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NAMA TEMPAT PARKIR"
-                android:textSize="25dp"
-                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
                 android:textColor="#415363"
-                android:textAlignment="center" />
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/tempat_parkir_alamat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jl. XXXXXXXXXXXXXXXXXXXXXXX"
                 android:textAlignment="center"
-                android:textSize="20dp"/>
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/tempat_parkir_jam_buka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="XX.XX - XX.XX"
                 android:textAlignment="center"
                 android:textSize="20dp" />
 
@@ -51,28 +50,27 @@
                 android:id="@+id/pemilik_hp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="XXXXXXXXXXXXX"
                 android:textAlignment="center"
-                android:textSize="20dp"/>
+                android:textSize="20dp" />
+
             <TextView
                 android:id="@+id/pemilik_slot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="XXXXXXXXXXXXX"
                 android:textAlignment="center"
+                android:textColor="#414351"
                 android:textSize="22dp"
-                android:textStyle="bold"
-                android:textColor="#414351"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/pemilik_harga"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="XXXXXXXXXXXXX"
                 android:textAlignment="center"
+                android:textColor="#414351"
                 android:textSize="22dp"
-                android:textStyle="bold"
-                android:textColor="#414351"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/pemilik_logout"
