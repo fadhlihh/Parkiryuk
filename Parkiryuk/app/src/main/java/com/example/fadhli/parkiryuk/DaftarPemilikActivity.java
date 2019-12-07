@@ -67,6 +67,7 @@ public class DaftarPemilikActivity extends AppCompatActivity{
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("alamat").setValue(alamat_pemilik.getText().toString());
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("nohp_pemilik").setValue(hp_pemilik.getText().toString());
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("jml_slot").setValue(slot_pemilik.getText().toString());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("jml_pemesan").setValue("0");
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("harga_per_jam").setValue(harga_pemilik.getText().toString());
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("jam_buka").setValue(jam_buka.getText().toString());
                                     FirebaseDatabase.getInstance().getReference().child("users").child(task.getResult().getUser().getUid()).child("jam_tutup").setValue(jam_tutup.getText().toString());

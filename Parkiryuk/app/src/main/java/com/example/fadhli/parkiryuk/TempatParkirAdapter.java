@@ -69,23 +69,39 @@ public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapte
                             String status = childSnapshot.child("status_akun").getValue().toString().trim();
                             if (status.equals("pemilik")){
                                 String nama = childSnapshot.child("nama_tempat").getValue().toString().trim();
-                                String uID = childSnapshot.getKey().toString().trim();
+                                final String uID = childSnapshot.getKey().toString().trim();
                                 String nama2 = dataList.get(position).getNama();
                                 if(nama2.equals(nama)){
                                     String time =  String.valueOf(new Date().getTime()/1000);
-                                    String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                                    String date = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault()).format(new Date());
 
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("nama_tempat").setValue(dataList.get(position).getNama());
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("tanggal").setValue(date);
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("harga").setValue(dataList.get(position).getHargaParkir());
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("jam_buka_tutup").setValue(dataList.get(position).getJamBuka());
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("status_parkir").setValue("Belum Parkir");
+                                    FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemesan").child(mAuth.getCurrentUser().getUid()).child(time).child("id_pemilik").setValue(uID);
 
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("nama_pemesan").setValue(nama_pemesan);
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("status_parkir").setValue("Dalam Perjalanan");
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("tanggal").setValue(date);
                                     FirebaseDatabase.getInstance().getReference().child("transaksi").child("id_pemilik").child(uID).child(time).child("harga").setValue(dataList.get(position).getHargaParkir());
+
                                     FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).child("last_id_parkir").setValue(time);
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(uID).child("jml_pemesan").addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                            String jumlah_pemesan = Integer.toString(Long.valueOf(dataSnapshot.getValue().toString().trim()).intValue() + 1);
+                                            FirebaseDatabase.getInstance().getReference().child("users").child(uID).child("jml_pemesan").setValue(jumlah_pemesan);
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                        }
+                                    });
+
+
                                     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid());
                                     //timer start
                                 }

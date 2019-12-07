@@ -57,10 +57,19 @@ public class PemesanAdapter extends RecyclerView.Adapter<PemesanAdapter.PemesanV
                                     String nama = childSnapshot.child("nama_pemesan").getValue().toString().trim();
                                     String uID = childSnapshot.getKey().toString().trim();
                                     String nama2 = dataList.get(position).getNama();
-                                    Log.d("wkwk",nama);
-                                    Log.d("wkwk2",nama2);
                                     if(nama2.equals(nama)){
+                                        FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).child("jml_pemesan").addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String jumlah_pemesan = Integer.toString(Long.valueOf(dataSnapshot.getValue().toString().trim()).intValue() - 1);
+                                                FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).child("jml_pemesan").setValue(jumlah_pemesan);
+                                            }
 
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         String time = childSnapshot.child("last_id_parkir").getValue().toString().trim();
 
                                         FirebaseDatabase.getInstance().getReference().child("users").child(uID).child("last_id_parkir").removeValue();
