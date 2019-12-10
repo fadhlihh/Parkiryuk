@@ -123,12 +123,16 @@ public class PemesanAdapter extends RecyclerView.Adapter<PemesanAdapter.PemesanV
             });
         }
         holder.harga.setText("Rp "+String.valueOf(dataList.get(position).getHarga()));
-
     }
 
     @Override
     public int getItemCount() {
         return (dataList != null)?dataList.size():0;
+    }
+
+    public void filterList(ArrayList<Pemesan> filteredList) {
+        dataList = filteredList;
+        notifyDataSetChanged();
     }
 
     public class PemesanViewHolder extends RecyclerView.ViewHolder{

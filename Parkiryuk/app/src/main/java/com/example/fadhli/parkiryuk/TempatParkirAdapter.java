@@ -122,6 +122,11 @@ public class TempatParkirAdapter extends RecyclerView.Adapter<TempatParkirAdapte
         return (dataList != null)?dataList.size():0;
     }
 
+    public void filterList(ArrayList<TempatParkir> filteredList) {
+        dataList = filteredList;
+        notifyDataSetChanged();
+    }
+
     public class TempatParkirViewHolder extends RecyclerView.ViewHolder{
         private TextView nama,alamat,jamBuka,sisaSlot,hargaParkir;
         private ImageView statusOnline;

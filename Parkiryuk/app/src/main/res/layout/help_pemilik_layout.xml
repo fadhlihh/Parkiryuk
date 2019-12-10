@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Catatan :"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Pastikan gawai atau telepon seluler anda terhubung pada jaringan internet."
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Pemesan parkir di Mang Parkir"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1. Pemesan yang telah memesan tempat parkir akan terdaftar di list parkir"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Pemesan datang"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1. Jika pemesan sudah datang cek id parkirnya, cari pemesan dengan id parkir tersebut. Anda dapat memanfaatkan fitur pencarian dengan mengetik id parkir atau nama pemesan"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2. Jika ada, tekan tombol sampai"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="3. Tombol sampai akan berubah dengan tombol selesai, yang menandakan status parkir pemesan telah berubah menjadi sampai"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Pemesan datang"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1. Jika pemesan sudah datang cek id parkirnya, cari pemesan dengan id parkir tersebut. Anda dapat memanfaatkan fitur pencarian dengan mengetik id parkir atau nama pemesan"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2. Jika ada, tekan tombol sampai"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="3. Tombol sampai akan berubah dengan tombol selesai, yang menandakan status parkir pemesan telah berubah menjadi sampai"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Pemesan telah selesai parkir"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1. Jika pemesan sudah selesai cek id parkirnya, cari pemesan dengan id parkir tersebut. Anda dapat memanfaatkan fitur pencarian dengan mengetik id parkir atau nama pemesan"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2. Tekan tombol selesai, untuk mengakhiri sesi parkir pemesan"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="3. Pemesan akan hilang dari daftar yang menandakan pemesan telah selesai parkir dan membayar"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Keluar dari Mang Parkir"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Untuk keluar dari aplikasi mang parkir, buka profil klik tombol keluar"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Ubah Profil"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Anda dapat mengubah informasi tempat parkir anda pada aplikasi yaitu dengan masuk ke profil pilih menu ubah profil. Setelah selesai melakukan perubahan, jangan lupa untuk menekan tombol simpan"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

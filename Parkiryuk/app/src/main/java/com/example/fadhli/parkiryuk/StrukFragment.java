@@ -1,7 +1,10 @@
 package com.example.fadhli.parkiryuk;
 
 import android.app.Fragment;
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -9,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Chronometer;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,10 +25,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class StrukFragment extends android.support.v4.app.Fragment {
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    ImageButton help;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.struk_pemesan_fragment,container,false);
+        help = (ImageButton) view.findViewById(R.id.ib_help);
         final TextView id_parkir, tempat_parkir, tanggal_parkir, harga_per_jam, jam_buka_tutup, status_parkir, durasi_parkir, harga_total;
         final Button batal;
         id_parkir = (TextView) view.findViewById(R.id.struk_id_parkir);
@@ -98,6 +105,28 @@ public class StrukFragment extends android.support.v4.app.Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),HelpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Chronometer chrono  = (Chronometer) view.findViewById(R.id.struk_durasi_parkir);
+        chrono.setBase(SystemClock.elapsedRealtime());
+        chrono.start();
+        chrono.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener(){
+            @Override
+            public void onChronometerTick(Chronometer chronometer) {
+                long time = SystemClock.elapsedRealtime() - chronometer.getBase();
+                int h   = (int)(time /3600000);
+                int m = (int)(time - h*3600000)/60000;
+                int s= (int)(time - h*3600000- m*60000)/1000 ;
+                String t = (h < 10 ? "0"+h: h)+":"+(m < 10 ? "0"+m: m)+":"+ (s < 10 ? "0"+s: s);
+                chronometer.setText(t);
             }
         });
         return view;

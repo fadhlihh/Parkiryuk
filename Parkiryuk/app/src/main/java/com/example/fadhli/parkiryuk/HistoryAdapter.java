@@ -37,6 +37,11 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
         return (dataList != null)?dataList.size():0;
     }
 
+    public void filterList(ArrayList<History> filteredList) {
+        dataList = filteredList;
+        notifyDataSetChanged();
+    }
+
     public class HistoryViewHolder extends RecyclerView.ViewHolder{
         private TextView bulan,tempatParkir,idParkir,durasi,tanggal,harga;
         public HistoryViewHolder(View view){

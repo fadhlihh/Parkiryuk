@@ -10,15 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MasukActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".MasukActivity"/>
         <activity android:name=".DaftarPemesanActivity"/>
         <activity android:name=".DaftarPemilikActivity"/>
         <activity android:name=".PemesanActivity"/>
         <activity android:name=".PemilikActivity"/>
+        <activity android:name=".HelpActivity"/>
+        <activity android:name=".HelpPemilikActivity"/>
     </application>
 </manifest>

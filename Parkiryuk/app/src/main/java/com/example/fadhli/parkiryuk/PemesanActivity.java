@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 public class PemesanActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    public boolean pesan;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,6 @@ public class PemesanActivity extends AppCompatActivity implements BottomNavigati
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.child("last_id_parkir").exists()){
-                    Toast.makeText(PemesanActivity.this, "Pemesanan berhasil! Hati-hati di perjalanan :)", Toast.LENGTH_LONG).show();
                     loadFragment(new StrukFragment());
                 }else{
                     loadFragment(new ListTempatParkirFragment());
@@ -56,25 +56,27 @@ public class PemesanActivity extends AppCompatActivity implements BottomNavigati
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         android.support.v4.app.Fragment fragment = null;
-
         switch(item.getItemId()){
             case R.id.home_nav:
                 FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.child("last_id_parkir").exists()){
-                            Toast.makeText(PemesanActivity.this, "Pemesanan berhasil! Hati-hati di perjalanan :)", Toast.LENGTH_LONG).show();
-                            loadFragment(new StrukFragment());
+                            pesan = true;
                         }else{
-                            loadFragment(new ListTempatParkirFragment());
+                            pesan = false;
                         }
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
                 });
+                if(pesan){
+                    fragment = new StrukFragment();
+                }else{
+                    fragment = new ListTempatParkirFragment();
+                }
                 break;
             case R.id.profile_nav:
                 fragment = new ProfileFragment();

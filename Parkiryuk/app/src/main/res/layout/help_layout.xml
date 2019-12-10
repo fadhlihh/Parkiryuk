@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Catatan :"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Pastikan gawai atau telepon seluler anda terhubung pada jaringan internet."
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Pesan parkir di Mang Parkir"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1. Silahkan memilih nama lokasi parkir"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2. Anda dapat menggunakan bantuan pencarian dengan mengetik nama atau alamat tempat parkir"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="3. Apabila nama lokasi parkir sudah muncul, pencet tombol ‘Pesan’"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="4. Pesanan parkir anda akan diproses lalu anda akan menerima bukti pemesanan."
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="5. Pastikan saldo anda cukup, tanpa saldo yang cukup, anda tidak dapat memesan parkir"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="6. Anda hanya dapat parkir di satu tempat pada waktu yang sama"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="7. Durasi parkir akan dihitung ketika anda telah menekan tombol pesan"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="8. Harga parkir akan sesuai dengan ketentuan harga dari tempat parkir yang anda pesan dikali durasi parkir anda"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="9. Jika anda sudah pesan parkir, dan belum datang ke tempat parkir, uang anda akan otomatis diambil dari saldo sesuai dengan durasi parkir anda"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Batalkan pesan"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1. Anda dapat membatalkan pesanan jika tidak jadi memesan parkir"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2. Jika anda tidak datang ke tempat parkir selama lebih dari 3 jam, pesanan anda akan otomatis dibatalkan"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="3. Untuk membatalkan pesanan, anda dapat menekan tombol batalkan pesanan pada struk parkir"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="History Parkir"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1. Semua jejak parkir anda akan disimpan"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2. Anda dapat menggunakan bantuan pencarian dengan mengetikan nama tempat parkir, atau id parkir"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Keluar dari Mang Parkir"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Untuk keluar dari aplikasi mang parkir, buka profil klik tombol keluar"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Ubah Profil"
+                android:textStyle="bold"
+                android:textColor="#415363"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Anda dapat mengubah informasi pribadi anda pada aplikasi yaitu dengan masuk ke profil pilih menu ubah progil. Setelah selesai melakukan perubahan, jangan lupa untuk menekan tombol simpan"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -17,11 +17,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:orientation="horizontal">
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/sort_drawable"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -29,6 +24,7 @@
                 android:layout_marginLeft="3dp"
                 app:hintEnabled="false">
                 <EditText
+                    android:id="@+id/et_search"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:paddingLeft="20dp"
@@ -38,6 +34,7 @@
                     android:background="@drawable/et_search_drawable"/>
             </android.support.design.widget.TextInputLayout>
             <ImageButton
+                android:id="@+id/ib_help"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -59,15 +56,6 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
             </android.support.v7.widget.RecyclerView>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/btn_red"
-                android:text="Bersihkan history"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="18dp"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
